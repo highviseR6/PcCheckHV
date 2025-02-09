@@ -1,19 +1,27 @@
 Clear-Host
 
-$name = Read-Host -Prompt "HighviseR6 Pc Checker"
+$HighviseCheckBase64 = "CuKWhOKWiOKWiOKWiOKWiCAg4paE4paI4paI4paI4paEICAg4paIICAgIOKWiCAgICDilojilogg
+ICDiloTilojiloQgICAgIOKWhCAg4paIIOKWhOKWiOKWiOKWiOKWhCAgIOKWhOKWiOKWhCAgICDi
+loggIOKWiOKWgCAK4paI4paAICAg4paAIOKWiOKWgCAgIOKWgCAg4paIICAgIOKWiCAgICDilogg
+4paIICDilojiloAg4paA4paEICDiloggICDilogg4paI4paAICAg4paAICDilojiloAg4paA4paE
+ICDilojiloTiloggICAK4paI4paA4paAICAgIOKWiOKWiOKWhOKWhCAgICDiloggICAg4paIICAg
+IOKWiOKWhOKWhOKWiCDiloggICDiloAgIOKWiOKWiOKWgOKWgOKWiCDilojilojiloTiloQgICAg
+4paIICAg4paAICDilojiloDiloQgICAK4paIICAgICAg4paI4paEICAg4paE4paAIOKWiOKWiOKW
+iOKWhCDilojilojilojiloQg4paIICDilogg4paI4paEICDiloTiloAg4paIICAg4paIIOKWiOKW
+hCAgIOKWhOKWgCDilojiloQgIOKWhOKWgCDiloggIOKWiCAgCiDiloggICAgIOKWgOKWiOKWiOKW
+iOKWgCAgICAgICDiloAgICAg4paAICAg4paIIOKWgOKWiOKWiOKWiOKWgCAgICAg4paIICDiloDi
+lojilojilojiloAgICDiloDilojilojilojiloAgICAg4paIICAgCiAg4paAICAgICAgICAgICAg
+ICAgICAgICAgICAg4paIICAgICAgICAgICDiloAgICAgICAgICAgICAgICAgICAg4paAICAgIAog
+ICAgICAgICAgICAgICAgICAgICAgICAgIOKWgCAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAK"
+$HighviseCheckString = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($HighviseCheckBase64))
+$HighviseCheckLines = $HighviseCheckString -split "`n"
 
-<style>
-  .big-name {
-    font-size: 48px; /* Adjust size as needed */
-  }
-</style>
-
-<div class="big-name">Highvise</div> 
-
-foreach ($line in $headerLines) {
+foreach ($line in $HighviseCheckLines) {
     Write-Host $line -ForegroundColor DarkRed
     Start-Sleep -Milliseconds 200
 }
+
 Start-Sleep -Seconds 2
 
 Write-Host ""
