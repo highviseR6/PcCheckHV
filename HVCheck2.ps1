@@ -1,5 +1,15 @@
 Clear-Host
 
+$name = Read-Host -Prompt "HighviseR6 Pc Checker"
+
+<style>
+  .big-name {
+    font-size: 48px; /* Adjust size as needed */
+  }
+</style>
+
+<div class="big-name">Highvise</div> 
+
 foreach ($line in $headerLines) {
     Write-Host $line -ForegroundColor DarkRed
     Start-Sleep -Milliseconds 200
