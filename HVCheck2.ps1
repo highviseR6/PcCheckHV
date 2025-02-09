@@ -13,7 +13,7 @@ $headerString = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($hea
 $headerLines = $headerString -split "`n"
 
 foreach ($line in $headerLines) {
-    Write-Host $line -ForegroundColor Pink
+    Write-Host $line -ForegroundColor Magenta
     Start-Sleep -Milliseconds 200
 }
 Start-Sleep -Seconds 2
