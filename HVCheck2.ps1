@@ -1,24 +1,5 @@
 Clear-Host
 
-$headerBase64 = "CuKWhOKWiOKWiOKWiOKWiCAg4paE4paI4paI4paI4paEICAg4paIICAgIOKWiCAgICDilojilogg
-$windowWidth = $Host.UI.RawUI.WindowSize.Width
-[System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($headerBase64)) | ForEach-Object { $line = $_; $padding = ' ' * [Math]::Max((($windowWidth - $line.Length) / 2), 0); Write-Host ($padding + $line) }
-ICDiloTilojiloQgICAgIOKWhCAg4paIIOKWhOKWiOKWiOKWiOKWhCAgIOKWhOKWiOKWhCAgICDi
-loggIOKWiOKWgCAK4paI4paAICAg4paAIOKWiOKWgCAgIOKWgCAg4paIICAgIOKWiCAgICDilogg
-4paIICDilojiloAg4paA4paEICDiloggICDilogg4paI4paAICAg4paAICDilojiloAg4paA4paE
-ICDilojiloTiloggICAK4paI4paA4paAICAgIOKWiOKWiOKWhOKWhCAgICDiloggICAg4paIICAg
-IOKWiOKWhOKWhOKWiCDiloggICDiloAgIOKWiOKWiOKWgOKWgOKWiCDilojilojiloTiloQgICAg
-4paIICAg4paAICDilojiloDiloQgICAK4paIICAgICAg4paI4paEICAg4paE4paAIOKWiOKWiOKW
-iOKWhCDilojilojilojiloQg4paIICDilogg4paI4paEICDiloTiloAg4paIICAg4paIIOKWiOKW
-hCAgIOKWhOKWgCDilojiloQgIOKWhOKWgCDiloggIOKWiCAgCiDiloggICAgIOKWgOKWiOKWiOKW
-iOKWgCAgICAgICDiloAgICAg4paAICAg4paIIOKWgOKWiOKWiOKWiOKWgCAgICAg4paIICDiloDi
-lojilojilojiloAgICDiloDilojilojilojiloAgICAg4paIICAgCiAg4paAICAgICAgICAgICAg
-ICAgICAgICAgICAg4paIICAgICAgICAgICDiloAgICAgICAgICAgICAgICAgICAg4paAICAgIAog
-ICAgICAgICAgICAgICAgICAgICAgICAgIOKWgCAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAK"
-$headerString = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($headerBase64))
-$headerLines = $headerString -split "`n"
-
 foreach ($line in $headerLines) {
     Write-Host $line -ForegroundColor DarkRed
     Start-Sleep -Milliseconds 200
